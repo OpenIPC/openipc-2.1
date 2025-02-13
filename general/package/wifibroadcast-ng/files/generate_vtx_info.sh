@@ -170,39 +170,5 @@ EOF
 else
     echo "$CFG_FILE found. Updating values with yaml-cli..."
 
-    # Update existing keys with yaml-cli
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.vtx_id ff00
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.build_option "$build_option"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.soc "$soc"
-
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.wifi_adapter "$raw_driver"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.min_bw "$min_bw"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.max_bw "$max_bw"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.ldpc "$ldpc"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.stbc "$stbc"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.max_mcs "$max_mcs"
-
-    # Update tx_power subsection
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs0_min_tx "$mcs0_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs0_max_tx "$mcs0_max_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs1_min_tx "$mcs1_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs1_max_tx "$mcs1_max_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs2_min_tx "$mcs2_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs2_max_tx "$mcs2_max_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs3_min_tx "$mcs3_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs3_max_tx "$mcs3_max_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs4_min_tx "$mcs4_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs4_max_tx "$mcs4_max_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs5_min_tx "$mcs5_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs5_max_tx "$mcs5_max_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs6_min_tx "$mcs6_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs6_max_tx "$mcs6_max_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs7_min_tx "$mcs7_min_tx"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.wifi.tx_power.mcs7_max_tx "$mcs7_max_tx"
-
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.video.sensor "$sensor"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.video.min_bitrate "$min_bitrate"
-    yaml-cli -i "$CFG_FILE" -s .vtx_info.video.max_bitrate "$max_bitrate"
-
     echo "Updated $CFG_FILE with new auto-detected or default values via yaml-cli."
 fi
